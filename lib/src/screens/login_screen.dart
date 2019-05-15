@@ -32,6 +32,11 @@ class LoginScreenState extends State<LoginScreen> {
   Widget emailField() {
     return TextFormField(
       keyboardType: TextInputType.emailAddress,
+      validator: (String value) {
+        if (!value.contains('@')) {
+          return 'Please enter a valid email';
+        }
+      },
       decoration: InputDecoration(
           labelText: 'Email Address', hintText: 'example@mail.com'),
     );
@@ -44,6 +49,11 @@ class LoginScreenState extends State<LoginScreen> {
         hintText: 'Password',
       ),
       obscureText: true,
+      validator: (String value) {
+        if (value.length < 4) {
+          return 'Pasword must be at least 4 characters';
+        }
+      },
     );
   }
 
@@ -51,7 +61,9 @@ class LoginScreenState extends State<LoginScreen> {
     return RaisedButton(
       child: Text('Log In'),
       color: Colors.blue,
-      onPressed: () {},
+      onPressed: () {
+        formKey.currentState.validate();
+      },
       textColor: Colors.white,
     );
   }
