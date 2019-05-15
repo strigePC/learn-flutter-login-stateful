@@ -39,8 +39,9 @@ class LoginScreenState extends State<LoginScreen> {
     return TextFormField(
       decoration: InputDecoration(
         labelText: 'Password',
-        hintText: 'Password'
+        hintText: 'Password',
       ),
+      obscureText: true,
     );
   }
 
