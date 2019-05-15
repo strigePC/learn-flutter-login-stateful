@@ -11,7 +11,13 @@ class LoginScreen extends StatefulWidget {
 class LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return null;
+    return Container(
+      margin: EdgeInsets.all(20.0),
+      child: Form(
+        child: Column(
+          children: <Widget>[],
+        ),
+      ),
+    );
   }
 }
