@@ -18,6 +18,7 @@ class LoginScreenState extends State<LoginScreen> {
           children: <Widget>[
             emailField(),
             passwordField(),
+            Container(margin: EdgeInsets.only(top: 25.0)),
             submitButton(),
           ],
         ),
@@ -29,9 +30,7 @@ class LoginScreenState extends State<LoginScreen> {
     return TextFormField(
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
-        labelText: 'Email Address',
-        hintText: 'example@mail.com'
-      ),
+          labelText: 'Email Address', hintText: 'example@mail.com'),
     );
   }
 
